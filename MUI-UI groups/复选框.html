@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no" />
+		<link href="css/mui.min.css" rel="stylesheet" />
+	</head>
+
+	<body>
+		<header class="mui-bar mui-bar-nav">
+		    <h1 class="mui-title">复选框</h1>
+		</header>
+		<div class="mui-content">
+		    <div class="mui-input-row mui-checkbox ">
+		        <label>看书</label>
+		        <input name="Checkbox" type="checkbox" value="reading" class="a">
+		    </div>
+		    <div class="mui-input-row mui-checkbox ">
+		        <label>唱歌</label>
+		        <input name="Checkbox" type="checkbox" value="singing" class="a">
+		    </div>
+		    <button type="button" id="sub" class="mui-btn mui-btn-blue mui-btn-block">提交</button>
+		</div>
+		<script src="js/mui.min.js"></script>
+		<script type="text/javascript">
+			mui.init()
+		</script>
+	</body>
+        <script type="text/javascript">
+    	var aInput=document.querySelectorAll(".a");
+    	var oBtn=document.querySelector("#sub");
+    	
+    	oBtn.addEventListener("tap",function(){
+    		//var k=0;
+    		var aVal=new Array();
+//    		alert(typeof aVal);
+    		for(var i=0;i<aInput.length;i++){
+    			if(aInput[i].checked){
+//   				aVal.push(aInput[i].value);  
+//                  aVal[k]=aInput[i].value;
+//                  k++;
+                    aVal[aVal.length++]=aInput[i].value;
+              }
+    		}
+    		if(aVal.length==0){
+    			mui.toast('请选择');
+    			return;
+    		}
+    		mui.toast(aVal);
+    	});
+    </script>
+</html>
