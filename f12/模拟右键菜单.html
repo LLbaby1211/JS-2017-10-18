@@ -1,0 +1,63 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>模拟右键菜单.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      *{
+        margin:0px;
+        padding:0px;
+        list-style:none;
+      }
+      #menu{
+        width:100px;
+        position:absolute;
+        left:0px;
+        top:0px;
+        display:none;
+        border:#000 1px solid;
+      }
+      #menu li{
+        width:100px;
+        height:40px;
+        line-height:40px;
+        border-bottom:#666 solid 1px;
+      }
+      #menu li a{
+        display:block;
+        text-align:center;
+        text-decoration:none;
+        color:#333;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oMenu = document.getElementById("menu");
+    	  
+    	  document.oncontextmenu = function(ev){
+    		  var oEvent = ev || event;
+    		  var l = oEvent.clientX;
+    		  var t = oEvent.clientY;
+    		  oMenu.style.display = "block";
+    		  oMenu.style.left = l + "px";
+    		  oMenu.style.top = t + "px";
+    		  return false;
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <ul id="menu">
+      <li><a href="http://www.baidu.com">去百度</a></li>
+      <li><a href="http://www.jd.com">去京东</a></li>
+      <li><a href="http://www.taobao.com">去淘宝</a></li>
+      <li><a href="http://www.sina.com.cn">去新浪</a></li>
+    </ul>
+  </body>
+</html>

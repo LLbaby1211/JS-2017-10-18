@@ -1,0 +1,75 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>图片放大镜1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #small{
+        width:300px;
+        height:300px;
+        border:1px solid #000;
+        float:left;
+        position:relative;
+      }
+      #small img{
+        width:300px;
+        height:300px;
+      }
+      #small span{
+        display:block;
+        width:120px;
+        height:120px;
+        background:red;
+        opacity:0.5;
+        border:#333 1px solid;
+        position:absolute;
+        left:0px;
+        top:0px;
+        display:none;
+      }
+      #big{
+        width:300px;
+        height:300px;
+        border:#000 1px solid;
+        float:left;
+        margin-left:20px;
+        overflow:hidden;
+        position:relative;
+        display:none;
+      }
+      #big img{
+        position:absolute;
+      }
+      
+    </style>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oSmall = document.getElementById("small");
+    	  var oMask = document.getElementById("mask");
+    	  
+    	  oSmall.onmouseover = function(){
+    		  oMask.style.display = "block";
+    	  }
+    	  
+    	  oSmall.onmouseout = function(){
+    		  oMask.style.display = "none";
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="small">
+      <img src="s.jpg" alt="" />
+      <span id="mask"></span>
+    </div>
+    <div id="big">
+      <img src="b.jpg" alt="" />
+    </div>
+  </body>
+</html>

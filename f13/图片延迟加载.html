@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>图片延迟加载.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      img{
+        width:300px;
+        height:300px;
+        float:left;
+        margin:10px;
+        border:1px solid #000;
+      }
+    </style>
+    <script type="text/javascript">
+      function getPos(obj){
+    	  var l=0;
+    	  var t=0;
+    	  while(obj){
+    		  l+=obj.offsetLeft;
+    		  t+=obj.offsetTop;
+    		  obj=obj.offsetParent;
+    	  }
+    	  return {left:l,top:t};
+      }
+      window.onload = function (){
+    	  var aImg = document.getElementsByTagName("img");
+    	  var oScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    	  var clientH = document.documentElement.clientHeight;
+    	  
+    		  for(var i=0;i<aImg.length;i++){
+    			  var imgTop = getPos(aImg[i]).top;
+    			  if(oScroll + clientH >= imgTop){
+    				  aImg[i].src = aImg[i].getAttribute("_src");
+    			  }
+    		  }
+    	  }
+    </script>
+  </head>
+  
+  <body>
+    <img _src="img/b1.jpg" alt="" />
+    <img _src="img/b2.jpg" alt="" />
+    <img _src="img/b3.jpg" alt="" />
+    <img _src="img/b4.jpg" alt="" />
+    <img _src="img/b5.jpg" alt="" />
+    <img _src="img/b6.jpg" alt="" />
+    <img _src="img/b7.jpg" alt="" />
+    <img _src="img/b8.jpg" alt="" />
+    <img _src="img/b9.jpg" alt="" />
+    <img _src="img/b10.jpg" alt="" />
+  </body>
+</html>
