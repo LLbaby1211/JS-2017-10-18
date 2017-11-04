@@ -1,0 +1,29 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>整理格式1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oBtn = document.getElementById("btn");
+    	  var oTxt1 = document.getElementById("txt1");
+    	  var oTxt2 = document.getElementById("txt2");
+    	  
+    	  oBtn.onclick = function(){
+    		  oTxt2.value = oTxt1.value.replace(/^/mg,'    ');
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <textarea rows="10" cols="30" id="txt1" name=""></textarea>
+    <input type="button" value="整理" id="btn" />
+    <textarea rows="10" cols="30" id="txt2" name=""></textarea>
+  </body>
+</html>
