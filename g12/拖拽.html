@@ -1,0 +1,48 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>拖拽.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#box {
+			width: 100px;
+			height: 100px;
+			background: red;
+			position: absolute;
+			left: 0;
+			top: 0;
+		}
+	</style>
+	<script>
+		window.onload = function(){
+			var oBox = document.getElementById('box');
+			
+			oBox.onmousedown = function(ev){
+				var oEvent = ev || event;
+				var disX = oEvent.clientX - oBox.offsetLeft;
+				
+				oBox.onmousemove = function(ev){
+					var oEvent = ev || event;
+					var l = oEvent.clientX - disX;
+					oBox.style.left = l + 'px';
+				}
+				
+				oBox.onmouseup = function(){
+					oBox.onmousemove = null;
+					oBox.onmouseup = null;
+				}
+			}
+		}
+	</script>
+	</head>
+	
+	<body>
+	  <div id="box"></div>
+	</body>
+
+</html>

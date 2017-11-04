@@ -1,0 +1,61 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>事件下沉.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+	<style>
+		#box1{
+			width: 300px;
+			height:300px;
+		}
+		#box2{
+			width: 200px;
+			height:200px;
+		}
+		#box3{
+			width:100px;
+			height:100px;
+		}
+	</style>
+	<script>
+		function addEvent(obj,sEv,fn){
+			if(obj.addEventListener){
+				return obj.addEventListener(sEv,fn,false);	
+			}else{
+				return obj.attachEvent('on'+sEv,fn);	
+			}
+		}
+		window.onload = function(){
+			var oBox1 = document.getElementById('box1');
+			var oBox2 = document.getElementById('box2');
+			var oBox3 = document.getElementById('box3');
+			
+			addEvent(oBox1,'click',function(){
+				alert(this.style.background);	
+			});
+			
+			addEvent(oBox2,'click',function(){
+				alert(this.style.background);	
+			});
+			
+			addEvent(oBox3,'click',function(){
+				alert(this.style.background);	
+			});
+		}
+	</script>
+	</head>
+	
+	<body>
+		<div id="box1" style="background: green;">
+			<div id="box2" style="background: yellow;">
+		    	<div id="box3" style="background: red;"></div>
+		    </div>
+		</div>
+	</body>
+
+</html>
