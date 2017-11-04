@@ -1,0 +1,68 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>手风琴3.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      *{
+        margin: 0px;
+        padding: 0px;
+        list-style: none;
+      }
+      #box{
+        width: 590px;
+        height: 340px;
+        border: #000 1px solid;
+        position: relative;
+        margin: 50px auto;
+        overflow: hidden;
+      }
+      #box li {
+        position: absolute;
+        width: 590px;
+        height: 340px;
+      }
+    </style>
+    <script src="move.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oBox = document.getElementById("box");
+    	  var aLi = oBox.children;
+    	  
+    	  var w = 40;
+    	  
+    	  for(var i=1;i<aLi.length;i++){
+    		  aLi[i].style.left = oBox.offsetWidth - w * (aLi.length-i)+"px";
+    	  }
+    	  
+    	  for(var i=0;i<aLi.length;i++){
+    		  aLi[i].index = i;
+    		  aLi[i].onmouseover = function(){
+    			  for(var i=0;i<aLi.length;i++){
+    				  if(i<=this.index){
+    					  aLi[i].style.left = w*i+"px";
+    				  }else{
+    					  aLi[i].style.left = oBox.offsetWidth -w*(aLi.length-i)+"px";
+    				  }
+    			  }
+    		  }
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <ul id="box">
+      <li style="background: pink"></li>
+      <li style="background: green"></li>
+      <li style="background: yellow"></li>
+      <li style="background: red"></li>
+      <li style="background: blue"></li>
+    </ul>
+  </body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>新的运动形式.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #box{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+    </style>
+    <script src="move.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oBox = document.getElementById("box");
+    	  var  b = Tween.Back.prototype;
+    	  oBox.onclick = function(){
+    		  move(this,{left:700},{easeing:b});
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="box"></div>
+  </body>
+</html>

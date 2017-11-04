@@ -1,0 +1,50 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>中心点放大.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #box{
+        width: 200px;
+        height: 200px;
+        border: #000 solid 1px;
+        margin: 100px auto;
+        position: relative;
+      }
+      #p1{
+        width: 100px;
+        height: 100px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        margin: -50px 0 0 -50px;
+        background: #c00;
+      }
+    </style>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var oDiv = document.getElementById("box");
+    	  var oP = document.getElementById("p1");
+    	  
+    	  oP.onmouseover = function(){
+    		  this.style.width = "200px";
+    		  this.style.height = "200px";
+    		  this.style.margin = "0px";
+    		  this.style.left = "0";
+    		  this.style.top = "0";
+    	  }
+      }
+    </script>
+  </head>
+  
+  <body>
+    <div id="box">
+      <p id="p1"></p>
+    </div>
+  </body>
+</html>
