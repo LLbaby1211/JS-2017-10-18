@@ -1,0 +1,51 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>分步运动.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      div{
+        width: 40px;
+        height: 40px;
+        background: red;
+        line-height: 40px;
+        text-align: center;
+        border-radius: 50%;
+        float: left;
+        margin: 5px;
+        color: #fff;
+        opacity: 0;
+      }
+    </style>
+    <script src="move.js"></script>
+    <script type="text/javascript">
+      window.onload = function(){
+    	  var str = '的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错,会认为括号没写完,的时候回出错完,解决方法是';
+    	  for(var i = 0;i<str.length;i++){
+    		  var oDiv = document.createElement("div");
+    		  oDiv.innerHTML = str.charAt(i);
+    		  document.body.appendChild(oDiv);
+    	  }
+    	  var iNow = 0;
+    	  var aDiv = document.getElementsByTagName("div");
+    	  var timer1 = null;
+    	  timer1 = setInterval(function(){
+    		  move(aDiv[iNow],{opacity: 1});
+    		  iNow++;
+    		  if(iNow == str.length){
+    			  clearInterval(timer1);
+    		  }
+    	  },30);
+      }
+    </script>
+  </head>
+  
+  <body>
+    
+  </body>
+</html>
