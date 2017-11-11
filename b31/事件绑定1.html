@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>事件绑定1.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #div1{
+        width: 300px;
+        height: 300px;
+        background: green;
+      }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+    	  function fn(){
+    		  alert("1");
+    	  }
+    	  $("#div1").bind('mousewheel',fn);
+    	  $("#div1").unbind('mousewheel',fn);
+      })
+    </script>
+  </head>
+  
+  <body>
+    <div id="div1"></div>
+  </body>
+</html>

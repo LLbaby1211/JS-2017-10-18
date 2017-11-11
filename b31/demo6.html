@@ -1,0 +1,34 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+  <head>
+    <title>demo6.html</title>
+	
+    <meta http-equiv="keywords" content="keyword1,keyword2,keyword3">
+    <meta http-equiv="description" content="this is my page">
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #div{
+        width: 200px;
+        height: 200px;
+        background: red;
+      }
+    </style>
+    <script src="jquery.min.js"></script>
+    <script type="text/javascript">
+      $(function(){
+    	  var oBtn = $("#btn");
+    	  var oDiv = $("#div");
+    	  oBtn.click (function(){
+    		  oDiv.slideUp();
+    	  });
+      })
+    </script>
+  </head>
+  
+  <body>
+    <input type="button" value="点击" id="btn" />
+    <div id="div"></div>
+  </body>
+</html>
