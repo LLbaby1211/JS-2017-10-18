@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>transform4.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        margin: 100px auto;
+        transition: all 1s ease;
+      }
+      
+      #div:hover{
+        transform: rotate(45deg);
+        transform-origin:right top;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="div"></div>
+  </body>
+</html>
