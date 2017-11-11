@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>模拟购物车.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    衣服:<input type="number" id="txt" min="0" max="10" step="2" />
+  </body>
+  <script type="text/javascript">
+    var oTxt = document.getElementById("txt");
+    oTxt.onchage = function(){
+    	localStorage.yf = oTxt.value;
+    }
+  </script>
+</html>

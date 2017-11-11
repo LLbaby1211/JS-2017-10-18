@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>同步拖拽1.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        position: absolute;
+        top: 0;
+        left: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="div"></div>
+  </body>
+  <script type="text/javascript">
+    	  var oDiv = document.getElementById("div");
+    	  
+    	  window.onstorage = function(){
+    		  var json = JSON.parse(localStorage.dragMessage);
+    		  oDiv.style.left = json.left + "px";
+			  oDiv.style.top = json.top + "px";
+    	  }
+    </script>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>transition2.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+    <style type="text/css">
+      #div{
+        width: 100px;
+        height: 100px;
+        background: red;
+        transition: width 3s ease,height 3s linear,opacity 3s ease-in;
+      }
+      #div:hover{
+        width: 500px;
+        height: 300px;
+        opacity: 0;
+      }
+    </style>
+  </head>
+  
+  <body>
+    <div id="div"></div>
+  </body>
+</html>

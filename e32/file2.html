@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>file2.html</title>
+	
+    <meta name="keywords" content="keyword1,keyword2,keyword3">
+    <meta name="description" content="this is my page">
+    <meta name="content-type" content="text/html; charset=UTF-8">
+    
+    <!--<link rel="stylesheet" type="text/css" href="./styles.css">-->
+
+  </head>
+  
+  <body>
+    <input type="file" name="" id="txt"  multiple/>
+  </body>
+  <script type="type/javascript">
+         var oTxt = document.getElementById("txt");
+         oTxt.onchange = function(ev){
+              var oFire = ev.srcElement.files[0];
+              alert(oFire.size);
+        }
+</script>
+</html>
